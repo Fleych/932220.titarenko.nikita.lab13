@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Hello Quiz";
+}
+
+<h1 class="display-4"><b>Quiz results</b></h1>
+<h1 class="display-6">Right answers @ResultModel.right_ans out @ResultModel.total_tasks</h1>
+@{
+    int i = 0;
+    foreach (TaskModel task in ResultModel.tasks)
+    {
+        i++;
+        <div>@i) @task.question @task.answer</div>
+    }
+}

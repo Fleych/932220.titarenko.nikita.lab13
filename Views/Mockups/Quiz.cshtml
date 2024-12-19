@@ -1,0 +1,22 @@
+﻿@model TaskModel
+
+@{
+    ViewData["Title"] = "Hello Quiz";
+}
+
+<h1 class="display-4"><b>Quiz</b></h1>
+<form method="post">
+    <div><b>@Model.question</b></div>
+    <div><input type="number" name="answer" /><span asp-validation-for="answer"></span></div>
+    <div>
+        <input type="submit" name="action" value="Next" class="btn btn-outline-secondary mt-3 mr-1" />
+        <input type="submit" name="action" value="Finish" class="btn btn-primary mt-3 mr-1" />
+    </div>
+</form>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
